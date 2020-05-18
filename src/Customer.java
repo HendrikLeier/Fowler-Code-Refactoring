@@ -6,7 +6,7 @@ class Customer {
     private List<Rental> rentals = new LinkedList<>();
 
     public Customer(String newname) {
-        name = newname;
+        this.name = newname;
     }
 
     public void addRental(Rental rental) {
@@ -14,14 +14,14 @@ class Customer {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String statement() {
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
-        for (Rental rental : rentals) {
+        for (Rental rental : this.rentals) {
             //show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.movie.getCharge(rental.getDaysRented())) + "\n";
         }
@@ -33,7 +33,7 @@ class Customer {
 
     private double getTotalCharge() {
         double totalCharge = 0;
-        for (Rental rental : rentals) {
+        for (Rental rental : this.rentals) {
             totalCharge += rental.movie.getCharge(rental.getDaysRented());
         }
 
@@ -42,7 +42,7 @@ class Customer {
 
     private int getTotalFrequentRenterPoints() {
         int totalPoints = 0;
-        for (Rental rental : rentals) {
+        for (Rental rental : this.rentals) {
             totalPoints += rental.getMovie().getFrequentRenterPoints(rental.getDaysRented());
         }
 

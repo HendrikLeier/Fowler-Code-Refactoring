@@ -8,7 +8,7 @@ public class Movie {
     }
 
     public PriceCode getPriceCode() {
-        return priceCode;
+        return this.priceCode;
     }
 
     public void setPriceCode(PriceCode priceCode) {
@@ -16,7 +16,7 @@ public class Movie {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public double getCharge(int daysRented) {
