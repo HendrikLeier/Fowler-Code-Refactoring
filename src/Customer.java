@@ -28,8 +28,8 @@ class Customer {
             result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.movie.getCharge(rental.getDaysRented())) + "\n";
         }
         //add footer lines
-        result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(this.getTotalFrequentRenterPoints()) + " frequent renter points";
+        result += "Amount owed is " + this.getTotalCharge() + "\n";
+        result += "You earned " + this.getTotalFrequentRenterPoints() + " frequent renter points";
         return result;
     }
 
