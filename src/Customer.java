@@ -5,8 +5,8 @@ class Customer {
     private String name;
     private List<Rental> rentals = new LinkedList<>();
 
-    public Customer(String newname) {
-        this.name = newname;
+    public Customer(String name) {
+        this.name = name;
     }
 
     public void addRental(Rental rental) {
