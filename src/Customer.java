@@ -23,7 +23,7 @@ class Customer {
 
         for (Rental rental : this.rentals) {
             //show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.movie.getCharge(rental.getDaysRented())) + "\n";
+            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.getMovie().getCharge(rental.getDaysRented())) + "\n";
         }
         //add footer lines
         result += "Amount owed is " + this.getTotalCharge() + "\n";
@@ -34,7 +34,7 @@ class Customer {
     private double getTotalCharge() {
         double totalCharge = 0;
         for (Rental rental : this.rentals) {
-            totalCharge += rental.movie.getCharge(rental.getDaysRented());
+            totalCharge += rental.getMovie().getCharge(rental.getDaysRented());
         }
 
         return totalCharge;
