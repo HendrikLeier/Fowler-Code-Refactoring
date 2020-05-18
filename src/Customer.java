@@ -18,17 +18,17 @@ class Customer {
     }
 
     public String statement() {
-        String result = "Rental Record for " + this.getName() + "\n";
-        result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
+        StringBuilder result = new StringBuilder("Rental Record for " + this.getName() + "\n");
+        result.append("\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n");
 
         for (Rental rental : this.rentals) {
             //show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.getMovie().getCharge(rental.getDaysRented())) + "\n";
+            result.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(String.valueOf(rental.getMovie().getCharge(rental.getDaysRented()))).append("\n");
         }
         //add footer lines
-        result += "Amount owed is " + this.getTotalCharge() + "\n";
-        result += "You earned " + this.getTotalFrequentRenterPoints() + " frequent renter points";
-        return result;
+        result.append("Amount owed is ").append(this.getTotalCharge()).append("\n");
+        result.append("You earned ").append(this.getTotalFrequentRenterPoints()).append(" frequent renter points");
+        return result.toString();
     }
 
     private double getTotalCharge() {
