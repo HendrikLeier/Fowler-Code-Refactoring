@@ -27,7 +27,7 @@ class Customer {
             //determine amounts for each line
             // add frequent renter points
             //show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.getCharge()) + "\n";
+            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.movie.getCharge(rental.getDaysRented())) + "\n";
         }
         //add footer lines
         result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
@@ -40,7 +40,7 @@ class Customer {
         Enumeration enum_rentals = rentals.elements();
         while (enum_rentals.hasMoreElements()) {
             Rental rental = (Rental) enum_rentals.nextElement();
-            totalCharge += rental.getCharge();
+            totalCharge += rental.movie.getCharge(rental.getDaysRented());
         }
 
         return totalCharge;
