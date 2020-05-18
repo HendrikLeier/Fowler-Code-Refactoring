@@ -23,7 +23,7 @@ class Customer {
 
         for (Rental rental : this.rentals) {
             //show figures for this rental
-            result.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(String.valueOf(rental.getMovie().getCharge(rental.getDaysRented()))).append("\n");
+            result.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(rental.getMovie().getCharge(rental.getDaysRented())).append("\n");
         }
         //add footer lines
         result.append("Amount owed is ").append(this.getTotalCharge()).append("\n");
