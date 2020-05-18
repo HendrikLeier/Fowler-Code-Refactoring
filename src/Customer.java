@@ -51,7 +51,7 @@ class Customer {
         Enumeration enum_rentals = rentals.elements();
         while (enum_rentals.hasMoreElements()) {
             Rental rental = (Rental) enum_rentals.nextElement();
-            totalPoints += rental.getFrequentRenterPoints();
+            totalPoints += rental.getMovie().getFrequentRenterPoints(rental.getDaysRented());
         }
 
         return totalPoints;
