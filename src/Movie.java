@@ -1,20 +1,17 @@
 public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
     private String title;
-    private int priceCode;
+    private PriceCode priceCode;
 
-    public Movie(String title, int priceCode) {
+    public Movie(String title, PriceCode priceCode) {
         this.title = title;
         this.priceCode = priceCode;
     }
 
-    public int getPriceCode() {
+    public PriceCode getPriceCode() {
         return priceCode;
     }
 
-    public void setPriceCode(int priceCode) {
+    public void setPriceCode(PriceCode priceCode) {
         this.priceCode = priceCode;
     }
 
@@ -43,7 +40,7 @@ public class Movie {
     }
 
     public int getFrequentRenterPoints(int daysRented) {
-        if(this.getPriceCode() == NEW_RELEASE && daysRented > 1) {
+        if(this.getPriceCode() == PriceCode.NEW_RELEASE && daysRented > 1) {
             return 2;
         }else return 1;
 
