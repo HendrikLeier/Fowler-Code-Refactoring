@@ -45,7 +45,6 @@ class Customer {
         for (Rental rental : this.rentals) {
             totalPoints += rental.getMovie().getFrequentRenterPoints(rental.getDaysRented());
         }
-
         return totalPoints;
     }
 
